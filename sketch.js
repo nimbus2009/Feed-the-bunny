@@ -79,9 +79,9 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  rope = new Rope(7,{x:410,y:100});
-  r2 = new Rope(7,{x:240,y:30});
-  r3 = new Rope(7,{x:120,y:70});
+  rope = new Rope(20,{x:canW-50,y:100});
+  r2 = new Rope(20,{x:20,y:30});
+  r3 = new Rope(5,{x:canW/2,y:70});
 
   fruit = Bodies.circle(300,300,20);
   Matter.Composite.add(rope.body,fruit);
@@ -91,28 +91,28 @@ function setup() {
   fruit_con_3 = new Link(r3,fruit);
  
   button = createImg('cut_btn.png');
-  button.position(220,30);
+  button.position(20,30);
   button.size(50,50);
   button.mouseClicked(drop);
 
   //drop(r2,fruit_con_2)
 
   b2 = createImg('cut_btn.png');
-  b2.position(100 ,70);
+  b2.position(canW/2 ,70);
   b2.size(50,50);
   b2.mouseClicked(drop2);
 
   //drop(r3,fruit_con_3)
 
   b3 = createImg('cut_btn.png');
-  b3.position(390,100);
+  b3.position(canW-50,100);
   b3.size(50,50);
   b3.mouseClicked(drop3);
 
   //drop(rope,fruit_con)
 
   mute_btn = createImg('mute.png');
-  mute_btn.position(450,20);
+  mute_btn.position(canW*(3/4),20);
   mute_btn.size(50,50);
   mute_btn.mouseClicked(mute);
   
